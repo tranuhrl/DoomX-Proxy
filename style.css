@@ -1,0 +1,60 @@
+html
+{
+    height:100%
+}
+
+body
+{
+    background-color: gray;
+}
+
+h1 {
+    font-family: "Varela Round", sans-serif;
+    font-style: normal;
+    }
+
+    p {
+        font-family: "Varela Round", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color:black
+      }
+      
+#info
+{
+    font-size: 22px;
+}   
+
+.contain
+{
+    background-color:white;
+    height: 80px;
+    width: 900px;
+    border-radius: 10px;
+}
+
+.container {
+    text-align: center;
+}
+
+#buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+}
+
+#top-web {
+    margin-top: 0px;
+}
+
+#warning
+{
+    position:absolute;
+    bottom:0;
+    text-align: center;
+}
+#warningdiv
+{
+    text-align: center;
+}
