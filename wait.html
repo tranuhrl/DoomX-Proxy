@@ -9,15 +9,35 @@
     <h1>
         Heads Up! It seems your computer is a little too slow, so it'll take time to load. It should take up to 3 minutes to load.
     </h1>
-    <p>
-        DETECTED COMPUTER: Chromebook 3100, All In One. Intel Celeron n4020 Intel Inside. 4GB RAM 32GB Storage Flash Memory. ENROLLMENT ENTERPRISE DETECTED. ChromeOS Managed by: cvschools.org
+    <p id="hardware-info">
+        DETECTED COMPUTER: <span id="device-name"></span>
     </p>
     <script>
-        var delayInMilliseconds = 180000;
+        function detectDevice() {
+            var deviceName = "Unknown Device";
+            var userAgent = navigator.userAgent.toLowerCase();
+            
+            if (userAgent.includes("windows")) {
+                deviceName = "Windows PC";
+            } else if (userAgent.includes("macintosh") || userAgent.includes("mac os x")) {
+                deviceName = "Mac";
+            } else if (userAgent.includes("iphone") || userAgent.includes("ipad") || userAgent.includes("ipod")) {
+                deviceName = "iOS";
+            } else if (userAgent.includes("android")) {
+                deviceName = "Android";
+            } else if (userAgent.includes("chromebook")) {
+                deviceName = "Chromebook";
+            }
+            
+            return deviceName;
+        }
 
-setTimeout(function() {
-  location.href = "geforcenowemulator.html"
-}, delayInMilliseconds);
+        document.getElementById("device-name").innerText = detectDevice();
+        
+        var delayInMilliseconds = 180000;
+        setTimeout(function() {
+            location.href = "geforcenowemulator.html";
+        }, delayInMilliseconds);
     </script>
 </body>
 </html>
