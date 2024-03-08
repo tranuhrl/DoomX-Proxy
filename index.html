@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DoomX Proxy</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>DoomX Proxy | Settings</title>
+    <link rel="stylesheet" href="style2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
@@ -12,74 +12,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Varela+Round&display=swap" rel="stylesheet">
 </head>
-<body>
-        <center>
-            <div>
-                <div class="container">
-                    <div id="buttons">
-                        <img src="settings.png" width="50px">
-                    </div>
-                    <div id="top-web">
-                        <h1 id="title">DoomX Proxy</h1>
-                            <center>
-                                <div class="contain">
-                                    <p id="info">
-                                        Welcome to DoomX Proxy, designed by the developers of Unblocked Games 66 EZ. DoomX Proxy is designed for the sole purpose of unblocking restricted games on your school device. Click on any image to play that game.
-                                    </p>
-                                </div>
-                            </center>
-            </div>
-                </div>
-                <hr>
-                <br>
-                <br>
-                <br>
-                <h1 id="title2">Unblocked Games:</h1>
-                <div id="main">
-                    <div id="1v1lol">
-                        <img id="1v1lol_image" src="https://images.crazygames.com/games/1v1-lol/cover-1585728351086.png?auto=format,compress&q=75&cs=strip" width="300px">
-                        <img id="roblox_image" src="https://play-lh.googleusercontent.com/WNWZaxi9RdJKe2GQM3vqXIAkk69mnIl4Cc8EyZcir2SKlVOxeUv9tZGfNTmNaLC717Ht" width="170px">
-                        <img id="fortnite_image" src="https://www.webwise.ie/wp-content/uploads/2018/04/Fortnite.jpg" width="170px">
-                        <img id="slope_image" src="https://lh3.googleusercontent.com/wivyohnYUjgwXjjPL0WeA3vhNNQXAXL6TyHxJ8OsNe7nyoPuqZoUPuPzs8Pv84_q1qhkepWXbxgnNVFRzFInfyYV=w640-h400-e365-rj-sc0x00ffffff" width="275px">
-                        <img id="retrobowl_image" src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/ee9ca3764ef4289a48a1ebf457ef605441ed1f35a0f2eb12707a70d609e53686.png" width="170px">
-                    </div>
-                    <div id="warningdiv">
-                        <p id="warning">(This site is new, so we don't have many games. Some of the games might be broken too. If so, please email doomxproxy@gmail.com and we will fix it ASAP.)</p>    
-                    </div> 
-                </div>
-            </div>
-        </center>
+<body style="background-color: gray;">
+    <button onclick = "go()">Go Back</button>
     <script>
-        var onevone = document.getElementById("1v1lol_image");
-        var roblox = document.getElementById("roblox_image");
-        var fortnite = document.getElementById("fortnite_image");
-        var slope = document.getElementById("slope_image");
-        var retro_bowl = document.getElementById("retrobowl_image");
-
-        onevone.addEventListener("click", function() {
-            var win = window.open('about:blank');
-            win.document.write('<iframe src=\'https://book-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/mind4ur/debugactions@57aba9c568b75b8aaddbcad0a05f8c26f57b344b/package/1v1old.xml&container=ig\' style=\'border: none; width: 100%; height: 100%; margin: 0px;\'></iframe>');
-        });
-
-        roblox.addEventListener("click", function() {
-            var win = window.open('about:blank');
-            win.document.write('<iframe src="https://now.gg/play/roblox-corporation/5349/roblox" style="border: none; width: 100%; height: 100%; margin: 0px;"></iframe>');
-        });
-
-        slope.addEventListener("click", function() {
-            var win = window.open('about:blank');
-            win.document.write('<iframe src="https://y8.com/embed/slope" scrolling="no" style="width: 100%; height: 100%; border: 0; margin: 0; padding: 0;"> </iframe>​');
-        });
-
-        retro_bowl.addEventListener("click", function() {
-            var win = window.open('about:blank');
-            win.document.write('<iframe src="https://retrobowl-unblocked.github.io/new.html" scrolling="no" style="width: 100%; height: 100%; border: 0; margin: 0; padding: 0;"> </iframe>​');
-        });
-
-        fortnite.addEventListener("click", function() {
-            location.href = "wait.html";
-        });
+        function go()
+        {
+            window.location = "index.html"
+        }
     </script>
-    
+    <center>
+        <h1 id="title">Settings</h1>
+        <hr>
+        <br>
+        <br>
+        <br>
+        <div id="settings">
+            <div id="analytics-option">
+                <h3>Analytics:</h3>
+                <div id="analytics-toggle">
+                    <button id="off" onclick="toggled('off')">Turn Off</button>
+                    <button id="on" onclick="toggled('on')">Turn On</button>
+                    <p id = "what">
+                        Analytics are <span id="current"></span> right now.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </center>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var setting = localStorage.getItem("setting");
+            if (setting === "on") {
+                document.getElementById("current").textContent = "on";
+            } else {
+                document.getElementById("current").textContent = "off";
+            }
+        });
+
+        function toggled(option) {
+            localStorage.setItem("setting", option);
+            document.getElementById("current").textContent = option;
+        }
+    </script>
 </body>
 </html>
