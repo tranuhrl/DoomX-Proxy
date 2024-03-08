@@ -1,8 +1,36 @@
-html
-{
-    height: 100%
+html {
+    height: 100%;
 }
-h1 {
+
+h1, h3, p {
     font-family: "Varela Round", sans-serif;
+    font-weight: 400;
     font-style: normal;
+    color: black;
+}
+
+button {
+    width: 4vw; /* Adjust as needed */
+    height: 30px;
+    font-family: "Varela Round", sans-serif;
+    border-style: solid;
+    font-weight: 1000;
+    font-style: normal;
+    background-color: grey;
+    border-radius: 10px;
+    cursor:pointer;
+}
+
+#analytics-option {
+    background-color: white;
+    width: 40%;
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    /* Apply styles for larger screens like tablets and desktops */
+    #analytics-option {
+        width: 40%;
+        height: auto;
     }
+}
